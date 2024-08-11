@@ -13,7 +13,7 @@ Stack *create_stack(int max_size) {
     Stack *new_stack = malloc(sizeof(Stack));
 
     new_stack->top = -1;
-    new_stack->elements = malloc(new_stack->max_size * sizeof(int));
+    new_stack->elements = malloc(max_size * sizeof(int));
     new_stack->current_size = 0;
     new_stack->max_size = max_size;
 
@@ -39,7 +39,7 @@ void pop(Stack *my_stack) {
         return;
     }
 
-    if(my_stack->current_size >= my_stack->max_size) {
+    if(my_stack->current_size <= 0) {
         printf("nao eh possivel remover elementos\npilha vazia!");
     } else {
         my_stack->current_size--;
@@ -59,5 +59,3 @@ void show_stack(Stack *my_stack) {
         printf("%i\n", my_stack->elements[counter]);
     }
 }
-
-void bubble_sort(Stack) {}

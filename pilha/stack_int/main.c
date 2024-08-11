@@ -34,15 +34,17 @@ int main(void) {
                 break;
             case 3:
                 if(is_empty(mystack) == 0) printf("Pilha vazia\n");
-                else printf("Tamanho da pilha: %i", mystack->current_size);
+                else printf("Tamanho da pilha: %i\n", mystack->current_size);
+                break;
             case 4:
                 printf("PILHA\n");
                 show_stack(mystack);
-            case 5:
-                printf("TOPO DA PILHA");
-                printf("%d", mystack->top);
-            default:
                 break;
+            case 5:
+                printf("TOPO DA PILHA: %d\n", mystack->top);
+                break;
+            default:
+                return 0;
         }
     } while (opc != 0);
 }
